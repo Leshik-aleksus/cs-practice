@@ -21,3 +21,11 @@ for _ in range(n):
             max_temp = temp
         if temp > threshold:
             over += 1
+            
+average = sum_temp / count_valid
+print(total)
+print(errors)
+print(over)
+print(f"{max_temp:.1f}")
+print(f"{average:.1f}")
+

@@ -15,3 +15,7 @@ def ranking(names: list[str], scores: list[float]) -> list[str]:
     paired = [(i, names[i], scores[i]) for i in range(len(names))]
     paired.sort(key=lambda x:(-x[2],x[0]))
     return [name for _, name, _ in paired]
+
+def above_average(names: list[str], scores: list[float]) -> list[str]:
+    avg = average(scores)
+    return [names[i] for i in range(len(names)) if scores[i] > avg]

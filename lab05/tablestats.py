@@ -7,7 +7,7 @@ def read_rows(lines: list[str]) -> list[dict]:
         if not line:
             continue
 
-        if header is None:к
+        if header is None:
             header = [col.strip() for col in line.split(',')]
         else:
             data_lines.append(line)
@@ -61,7 +61,6 @@ def total_minutes(rows: list[dict], kind: str) -> float:
 def to_csv(counts: dict) -> str:
     lines = ['тип,количество']
 
-    # Сортируем по алфавиту
     for event_type in sorted(counts.keys()):
         lines.append(f"{event_type},{counts[event_type]}")
 

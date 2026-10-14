@@ -1,4 +1,4 @@
-def read_rows(lines: list[str]) -> list[dict]:
+def read_rows(lines: list) -> list:
     header = None
     data_lines = []
 
@@ -31,7 +31,7 @@ def read_rows(lines: list[str]) -> list[dict]:
     return rows
 
 
-def count_types(rows: list[dict]) -> dict:
+def count_types(rows: list) -> dict:
     counts = {}
 
     for row in rows:
@@ -41,14 +41,14 @@ def count_types(rows: list[dict]) -> dict:
 
     return counts
 
-def total_minutes(rows: list[dict], kind: str) -> float:
+def total_minutes(rows: list, kind: str) -> float:
     total = 0.0
 
     for row in rows:
         if row.get('тип') == kind:
             minutes_str = row.get('минуты', '')
 
-            try:)
+            try:
                 minutes_str = minutes_str.replace(',', '.')
                 minutes = float(minutes_str)
                 total += minutes

@@ -1,5 +1,5 @@
 def count_items(values: list) -> dict:
-    counts = 0
+    counts = {}
     for value in values:
         counts[vakue] = counts.get(value, 0) + 1
     return counts

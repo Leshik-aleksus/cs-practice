@@ -62,7 +62,79 @@ print("Первые две строки без первого столбца:\n"
 
 # Центральный фрагмент 2*2 - строки 0 и 1, столбцы 1 и 2
 central = temperatures[0:2, 1:3]
-print("Центральный фрагмент 2×2:\n", central)
+print("Центральный фрагмент 2*2:\n", central)
 print("Форма центрального фрагмента:", central.shape)
 
 
+print("ЗАДАНИЕ 4. Прямоугольные срезы")
+
+matrix = np.arange(1, 26).reshape(5, 5)
+print("Исходная матрица 5*5:\n", matrix)
+
+# Первые три строки
+first_three_rows = matrix[:3]
+print("\nПервые три строки:\n", first_three_rows)
+print("shape:", first_three_rows.shape)
+
+# Последние две строки
+last_two_rows = matrix[-2:]
+print("\nПоследние две строки:\n", last_two_rows)
+print("shape:", last_two_rows.shape)
+
+# Первые два столбца
+first_two_cols = matrix[:, :2]
+print("\nПервые два столбца:\n", first_two_cols)
+print("shape:", first_two_cols.shape)
+
+# Фрагмент из строк с индексами 1-3 и столбцов 2–4
+fragment = matrix[1:4, 2:5]
+print("\nФрагмент строки 1-3, столбцы 2-4:\n", fragment)
+print("shape:", fragment.shape)
+
+# Угловой блок 2*2 в правом нижнем углу
+corner = matrix[-2:, -2:]
+print("\nУгловой блок 2*2 в правом нижнем углу:\n", corner)
+print("shape:", corner.shape)
+
+
+print("ЗАДАНИЕ 5. Изменение массива с помощью срезов")
+
+# Демонстрация из задания
+vector = np.array([10, 20, 30, 40, 50])
+vector[1:4] = 0
+print("После vector[1:4] = 0:", vector)
+
+small_matrix = np.arange(1, 10).reshape(3, 3)
+small_matrix[0, :] = -1
+small_matrix[1:, 1:] = 9
+print("small_matrix после изменений:\n", small_matrix)
+
+# changed_hours - копия hours с изменениями
+changed_hours = hours.copy()
+changed_hours[2:5] = 99
+changed_hours[1::2] = -1
+print("\nchanged_hours:", changed_hours)
+print("исходный hours:", hours)
+
+# changed_matrix - копия matrix с изменениями
+changed_matrix = matrix.copy()
+changed_matrix[1, :] = 0          # вся вторая строка на нули
+changed_matrix[:, -1] = -1        # последний столбец на -1
+changed_matrix[1:4, 1:4] = 100    # центральный блок 3*3 на 100
+print("\nchanged_matrix:\n", changed_matrix)
+print("\nисходная matrix:\n", matrix)
+
+
+print("ЗАДАНИЕ 6. Изменение формы")
+
+numbers = np.arange(12)
+print("numbers:", numbers)
+print("shape numbers:", numbers.shape)
+
+table = numbers.reshape(3, 4)
+print("\ntable (3, 4):\n", table)
+print("shape table:", table.shape)
+
+transposed = table.T
+print("\ntransposed (table.T):\n", transposed)
+print("shape transposed:", transposed.shape)
